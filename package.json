@@ -36,7 +36,6 @@
     "mocha": "^6.1.4"
   },
   "scripts": {
-    "command": "node ./index.js",
     "jshint": "gulp jshint",
     "test": "gulp test"
   },
