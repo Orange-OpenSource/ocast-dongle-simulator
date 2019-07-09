@@ -123,15 +123,7 @@ describe('Dial Queries', function(){
                 expect(result).to.equal('Internal Error');
             });
         });
-        it("Server should return dataset", function() {
-            assert.equal(dialserver.listApp(),"AppID=EXAMPLE_ES6\tUrl=http://localhost:8090/examples/es6/src/index.html\nAppID=Orange-DefaultReceiver-DEV\tUrl=http://localhost:8090/examples/es6/src/index.html\nAppID=LOCAL\tUrl=http://localhost:8090/local/src/index.html\nAppID=Orange-DEV2\tUrl=http://localhost:80\n");
-        });
-        it("Server should stop application", function() {
-            assert.equal(dialserver.stopApp());
-        });
-        it("Server should start application", function() {
-            assert.equal(dialserver.startApp());
-        });
+
         /*
         it("Server should reply a command", function() {
             var testPromise = new Promise(function(resolve, reject) {

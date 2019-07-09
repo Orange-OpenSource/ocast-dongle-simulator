@@ -9,7 +9,6 @@ if ((require.main === module)) {
 var broker = require('./lib/broker');
 var dialserver = require('./lib/dialserver');
 var webserver = require('./lib/webserver');
-var constants = require('./lib/constants');
 var params = require('commander');
 var logger = require('tracer').console({ level: global.debug ? 'log' : 'warn' });
 require('colors');
@@ -45,17 +44,7 @@ params.command('start [env]')
                 logger.warn(TAG + "Unknown service <<<" + cmd + ">>>");
         }
     });
-params.command('startApp [Application_ID]')
-    .description("Start Default Receiver")
-    .action(function (appId) {
-        dialserver.startApp(appId ? appId : constants.DEFAULT_APPLICATION);
-    });
 
-params.command('stopApp [Application_ID]')
-    .description("Stop Default Receiver")
-    .action(function (appId) {
-        dialserver.stopApp(appId ? appId : constants.DEFAULT_APPLICATION);
-    });
 params.parse(process.argv);
 
 exports.broker = broker;
