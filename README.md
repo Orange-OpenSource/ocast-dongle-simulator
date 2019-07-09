@@ -1,41 +1,44 @@
 # ocast-dongle-simulator
-## Usages
-> * Simulate the Ocast Dongle (support DIAL, WebSocket server, Route messages)
+
+The ocast-dongle-simulator can be used to simulate a dongle TV compatible with [OCast SDK](https://github.com/Orange-OpenSource/OCast-JS), in order to handle:
+- DIAL support
+- WebSocker server
+- messages routing wo receiver web application
+
+
 ## Prerequisites
-install node package manager for Windows/Linux/MacOs
 
-1. Download the Windows installer from the Nodes.js® web site.
-https://nodejs.org/download/
+[Nodes.js®](https://nodejs.org/en/)
 
-2. Run the installer (the .msi or .pkg file you downloaded in the previous step.)
-
-3. Follow the prompts in the installer
-
-4. Test Node. To see if Node is installed, open the Windows Command Prompt and type node -v
-
-***
+---
 
 ### License
 
 All code in this repository is covered by the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0). See LICENSE file for copyright details.
 
 ## Installation
-`npm install`
+
+`npm install -g`
 
 ## Configuration
-Edit `constants.js`  your configuration
+
+Edit `constants.js` to setup your configuration, such as applications data set.
 
 ### Start server for localhost
+
 #### Somes/All services
-`npm run command start` **[broker|dialserver|webserver|all]**
 
-### AppId
-`npm run command start` **appId**
+    dongletv start [broker|dialserver|webserver|all]
 
-### Start the server for localhost
+### Launch application from data set
 
-`npm run command stop` **appId**
+    dongletv startApp <appId>
 
-### Then
- 1. load the URL in the browser
- 2. send command via the ocast-dongle-controller or via your sender app
+### Stop application
+
+    dongletv stopApp <appId>
+
+### Test you receiver web application
+
+ 1. load your receiver web application in any browser
+ 2. send commands using the [ocast-dongle-controller](https://github.com/Orange-OpenSource/ocast-dongle-controller) or using your sender app

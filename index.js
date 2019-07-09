@@ -11,16 +11,16 @@ var dialserver = require('./lib/dialserver');
 var webserver = require('./lib/webserver');
 var constants = require('./lib/constants');
 var params = require('commander');
-var logger = require('tracer').console({level: global.debug?'log':'warn' });
+var logger = require('tracer').console({ level: global.debug ? 'log' : 'warn' });
 require('colors');
 
-var TAG = "D2R ".green;
+var TAG = "DONGLETV ".green;
 var pjson = require('./package.json');
 
 params.command('version')
     .description('Display version')
     .action(function () {
-        console.log("d2r_version simulator: "+pjson.version);
+        console.log("dongletv simulator version : " + pjson.version);
     });
 
 params.command('start [env]')
@@ -42,19 +42,19 @@ params.command('start [env]')
                 webserver.init();
                 break;
             default:
-                logger.warn(TAG+ "Unknown service <<<"+cmd+">>>");
+                logger.warn(TAG + "Unknown service <<<" + cmd + ">>>");
         }
     });
 params.command('startApp [Application_ID]')
     .description("Start Default Receiver")
-    .action(function(appId) {
-        dialserver.startApp(appId?appId : constants.DEFAULT_APPLICATION);
+    .action(function (appId) {
+        dialserver.startApp(appId ? appId : constants.DEFAULT_APPLICATION);
     });
 
 params.command('stopApp [Application_ID]')
     .description("Stop Default Receiver")
-    .action(function(appId) {
-        dialserver.stopApp(appId?appId : constants.DEFAULT_APPLICATION);
+    .action(function (appId) {
+        dialserver.stopApp(appId ? appId : constants.DEFAULT_APPLICATION);
     });
 params.parse(process.argv);
 

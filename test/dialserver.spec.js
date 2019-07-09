@@ -6,7 +6,7 @@ var fastXmlParser = require('fast-xml-parser');
 
 function sendMessage(type, path, resolve) {
     var options = {
-        host: constants.WEBSOCKET_HOST,
+        host: constants.DONGLE_IPADDRESS,
         path: path,
         port: constants.WEBSERVER_PORT,
         method: type
