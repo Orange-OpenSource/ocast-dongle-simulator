@@ -30,14 +30,6 @@ Edit `constants.js` to setup your configuration, such as applications data set.
 
     dongletv start [broker|dialserver|webserver|all]
 
-### Launch application from data set
-
-    dongletv startApp <appId>
-
-### Stop application
-
-    dongletv stopApp <appId>
-
 ### Test you receiver web application
 
  1. load your receiver web application in any browser
