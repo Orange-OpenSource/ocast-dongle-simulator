@@ -2,7 +2,7 @@
 
 The ocast-dongle-simulator can be used to simulate a dongle TV compatible with [OCast SDK](https://github.com/Orange-OpenSource/OCast-JS) in order to handle:
 - DIAL support
-- WebSocker server
+- WebSocket server
 - messages routing to receiver web application
 
 
